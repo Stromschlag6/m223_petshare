@@ -10,7 +10,7 @@ public class Like {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private ApplicationUser applicationUser;
 
     @ManyToOne
     @JoinColumn(name = "post_id")
@@ -18,8 +18,8 @@ public class Like {
 
     public Like() {}
 
-    public Like(User user, Post post) {
-        this.user = user;
+    public Like(ApplicationUser applicationUser, Post post) {
+        this.applicationUser = applicationUser;
         this.post = post;
     }
 
@@ -31,12 +31,12 @@ public class Like {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public ApplicationUser getUser() {
+        return applicationUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(ApplicationUser applicationUser) {
+        this.applicationUser = applicationUser;
     }
 
     public Post getPost() {

@@ -1,7 +1,7 @@
 package com.petshare.petshare_api.controller;
 
-import com.petshare.petshare_api.entity.User;
-import com.petshare.petshare_api.repository.UserRepository;
+import com.petshare.petshare_api.entity.ApplicationUser;
+import com.petshare.petshare_api.repository.ApplicationUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,15 +11,15 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
     @Autowired
-    private UserRepository userRepository;
+    private ApplicationUserRepository applicationUserRepository;
 
     @GetMapping
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    public List<ApplicationUser> getAllUsers() {
+        return applicationUserRepository.findAll();
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userRepository.save(user);
+    public ApplicationUser createUser(@RequestBody ApplicationUser applicationUser) {
+        return applicationUserRepository.save(applicationUser);
     }
 }

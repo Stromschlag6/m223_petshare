@@ -15,7 +15,7 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private ApplicationUser applicationUser;
 
     @OneToMany(mappedBy = "post")
     private List<Comment> comments;
@@ -25,9 +25,9 @@ public class Post {
 
     public Post() {}
 
-    public Post(String content, User user) {
+    public Post(String content, ApplicationUser applicationUser) {
         this.content = content;
-        this.user = user;
+        this.applicationUser = applicationUser;
     }
 
     public Long getId() {
@@ -54,12 +54,12 @@ public class Post {
         this.content = content;
     }
 
-    public User getUser() {
-        return user;
+    public ApplicationUser getUser() {
+        return applicationUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(ApplicationUser applicationUser) {
+        this.applicationUser = applicationUser;
     }
 
     public List<Comment> getComments() {
