@@ -22,6 +22,14 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Like> likes;
 
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    public User() {
+    }
+
     public Long getId() {
         return id;
     }

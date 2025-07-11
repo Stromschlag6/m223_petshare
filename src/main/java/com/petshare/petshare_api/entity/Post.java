@@ -23,6 +23,13 @@ public class Post {
     @OneToMany(mappedBy = "post")
     private List<Like> likes;
 
+    public Post() {}
+
+    public Post(String content, User user) {
+        this.content = content;
+        this.user = user;
+    }
+
     public Long getId() {
         return id;
     }
